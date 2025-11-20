@@ -1,0 +1,101 @@
+# 🚗 Parkiran API — NestJS + Prisma + MySQL
+
+API ini dibuat untuk mengelola data parkir kendaraan. Mulai dari mencatat kendaraan masuk, mengupdate durasi, menghitung total tarif otomatis, hingga mendapatkan total pendapatan keseluruhan. Proyek ini cocok sebagai latihan backend CRUD, query filtering, serta implementasi Prisma ORM.
+
+---
+
+## ✨ Fitur Utama
+
+* CRUD lengkap (Create, Read, Update, Delete)
+* Hitung **total tarif otomatis** berdasarkan durasi & jenis kendaraan
+* **Search**, **Filter**, dan **Pagination** pada data parkir
+* Endpoint untuk **menghitung total pendapatan**
+* Terintegrasi dengan **NestJS**, **Prisma ORM**, dan **MySQL**
+
+---
+
+## 🛠️ Teknologi yang Digunakan
+
+* **NestJS** — Backend framework
+* **Prisma ORM** — Database ORM
+* **MySQL** — Database
+* **Postman** — Testing API
+
+---
+
+# 🧩 Struktur Data (Schema Prisma)
+
+```prisma
+model Parkir {
+  id              Int              @id @default(autoincrement())
+  plat_nomor      String
+  jenis_kendaraan JenisKendaraan
+  durasi          Int
+  totalTarif      Int
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+enum JenisKendaraan {
+  roda2
+  roda4
+}
+```
+
+---
+
+# 📡 Endpoint API
+
+## 🔵 1. **Create Parkir**
+
+**POST /parkir**
+
+![](images/Add_Parkir.png)
+
+---
+
+## 🟢 2. **Get All Parkir (Search + Filter + Pagination)**
+
+**GET /parkir**
+
+![](images/Get_All_Parkir.png)
+
+---
+
+## 🟡 3. **Get Parkir by ID**
+
+![](images/Get_By_ID.png)
+
+---
+
+## 🟠 4. **Update Parkir**
+
+```
+PATCH /parkir/:id
+```
+
+![](images/Update_Parkir.png)
+
+---
+
+## 🔴 5. **Delete Parkir**
+
+![](images/Delete_Parkir.png)
+
+---
+
+## 🟣 6. **Total Pendapatan**
+
+![](images/Get_Total_Pendapatan.png)
+
+---
+
+# 🔍 Contoh Search, Filter, Pagination
+
+![](images/Get_By_Filter.png)
+
+---
+
+# ✔️ Kesimpulan
+
+Project ini merupakan API parkiran sederhana namun lengkap, dengan fitur CRUD, tarif otomatis, total pendapatan, search, filter, pagination, dan arsitektur bersih menggunakan NestJS + Prisma.
