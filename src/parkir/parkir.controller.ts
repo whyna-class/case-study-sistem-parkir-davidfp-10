@@ -21,12 +21,12 @@ export class ParkirController {
   create(@Body() createParkirDto: CreateParkirDto) {
     return this.parkirService.create(createParkirDto);
   }
-  
+
   @Get('pendapatan')
   totalPendapatan() {
     return this.parkirService.totalPendapatan();
   }
-  
+
   @Get()
   findAll(@Query() query: FindParkirDto) {
     return this.parkirService.findAll(query);
@@ -35,15 +35,5 @@ export class ParkirController {
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.parkirService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() dto: UpdateParkirDto) {
-    return this.parkirService.update(+id, dto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.parkirService.remove(+id);
   }
 }

@@ -1,12 +1,12 @@
 # 🚗 Parkiran API — NestJS + Prisma + MySQL
 
-API ini dibuat untuk mengelola data parkir kendaraan. Mulai dari mencatat kendaraan masuk, mengupdate durasi, menghitung total tarif otomatis, hingga mendapatkan total pendapatan keseluruhan. Proyek ini cocok sebagai latihan backend CRUD, query filtering, serta implementasi Prisma ORM.
+API ini dibuat untuk mengelola data parkir kendaraan. Mulai dari mencatat kendaraan masuk, menghitung total tarif otomatis, hingga mendapatkan total pendapatan keseluruhan. Proyek ini cocok sebagai latihan backend CRUD, query filtering, serta implementasi Prisma ORM.
 
 ---
 
 ## ✨ Fitur Utama
 
-* CRUD lengkap (Create, Read, Update, Delete)
+* Create, Show All, Show by Id
 * Hitung **total tarif otomatis** berdasarkan durasi & jenis kendaraan
 * **Search**, **Filter**, dan **Pagination** pada data parkir
 * Endpoint untuk **menghitung total pendapatan**
@@ -50,7 +50,7 @@ enum JenisKendaraan {
 
 **POST /parkir**
 
-![](images/Add_Parkir.png)
+![](images/add%20parkir.png)
 
 ---
 
@@ -58,44 +58,28 @@ enum JenisKendaraan {
 
 **GET /parkir**
 
-![](images/Get_All_Parkir.png)
+![](images/show%20all.png)
 
 ---
 
 ## 🟡 3. **Get Parkir by ID**
 
-![](images/Get_By_ID.png)
+![](images/show%20by%20id.png)
 
 ---
 
-## 🟠 4. **Update Parkir**
+## 🟣 4. **Total Pendapatan**
 
-```
-PATCH /parkir/:id
-```
-
-![](images/Update_Parkir.png)
-
----
-
-## 🔴 5. **Delete Parkir**
-
-![](images/Delete_Parkir.png)
-
----
-
-## 🟣 6. **Total Pendapatan**
-
-![](images/Get_Total_Pendapatan.png)
+![](images/total%20pendapatan.png)
 
 ---
 
 # 🔍 Contoh Search, Filter, Pagination
 
-![](images/Get_By_Filter.png)
+![](images/contoh%20search,dll.png)
 
 ---
 
 # ✔️ Kesimpulan
 
-Project ini merupakan API parkiran sederhana namun lengkap, dengan fitur CRUD, tarif otomatis, total pendapatan, search, filter, pagination, dan arsitektur bersih menggunakan NestJS + Prisma.
+Project ini merupakan API parkiran sederhana namun lengkap, dengan fitur tarif otomatis, total pendapatan, search, filter, pagination, dan arsitektur bersih menggunakan NestJS + Prisma.
